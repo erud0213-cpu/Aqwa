@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal v4.02</title>
+    <style>
+        body { background: #000; color: #33ff33; font-family: monospace; padding: 20px; font-size: 18px; line-height: 1.5; }
+        .cursor { display: inline-block; width: 10px; height: 18px; background: #33ff33; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="log"></div>
+    <span class="cursor"></span>
+
+    <script>
+        const lines = [
+            "Connecting to local host...",
+            "Access Granted.",
+            "Scanning directory C:/Users/Friend/Documents...",
+            "Searching for hidden games...",
+            "WARNING: Too many memes found on this PC! ⚠️",
+            "Downloading personal code library...",
+            "SUCCESS: All homework deleted! 🎉",
+            
+        ];
+
+        let i = 0;
+        function printLine() {
+            if (i < lines.length) {
+                document.getElementById('log').innerHTML += lines[i] + "<br><br>";
+                i++;
+                // Наступний рядок з'явиться через 1.5 секунди (1500 мілісекунд)
+                setTimeout(printLine, 1500); 
+            }
+        }
+        printLine();
+    </script>
+</body>
+</html>
